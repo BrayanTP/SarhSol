@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class="row mt-1">
+    <div class="col-md-4 offset-md-4 text-center" id="Formulario">
+        <h3 class="" style="color:#024c1d;"> Bienvenidos a SARH </h3>
+        <br />
+        <div class="input-icono-idcard">
+            <input type="number" class="form-control" name="Cedula" id="Cedula" placeholder="Cedula *" data-min="4" required />
+        </div>
+    </div>
+</div>
+<div class="row mt-3" id="DivbtnSuccess">
+    <div class="col-md-12 text-center pb-5">
+        <button class="btn btn-success" id="btn-Buscar">Buscar</button>
+    </div>
+</div>
+
+<table id="table_id" class="display">
+ 
+</table>
+
+@section scripts{
+    <script type="text/javascript" src="~/Content/Scripts/Famxusu.js"></script>
+}

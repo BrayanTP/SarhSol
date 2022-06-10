@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="bdcmp_ccam_sisadmModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Sarh_CentroCostoxUsurio">
+          <Key>
+            <PropertyRef Name="usce_Idusucent" />
+          </Key>
+          <Property Name="usce_Idusucent" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usce_Idusuario_fk" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="usce_Idcentro_fk" Type="int" Nullable="false" />
+          <Property Name="usce_Idoperacion" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="usce_fechacreacion" Type="smalldatetime" Nullable="false" />
+          <Property Name="usce_Usucreador" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sarh_familiarxusuario">
+          <Key>
+            <PropertyRef Name="id_familiar_pk" />
+          </Key>
+          <Property Name="id_familiar_pk" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fam_idUsuario_fk" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="fam_NombreCompleto" Type="varchar" MaxLength="50" />
+          <Property Name="fam_DocumentoFamiliar" Type="varchar" MaxLength="50" />
+          <Property Name="fam_Parentesco_Familiar" Type="int" />
+          <Property Name="fam_fcreacion" Type="smalldatetime" />
+          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fam_idusucreador_fk" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="fam_ocupacion_fk" Type="int" />
+          <Property Name="fam_empresa" Type="varchar" MaxLength="150" />
+          <Property Name="fam_telefono" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="fam_depende" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="sarh_Log_Usuario">
+          <Key>
+            <PropertyRef Name="id_Log_usuarioFamiliarxcentrocosto" />
+          </Key>
+          <Property Name="id_Log_usuarioFamiliarxcentrocosto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fam_NombreCompleto" Type="varchar" MaxLength="50" />
+          <Property Name="usce_Idcentro_fk" Type="int" />
+          <Property Name="usce_Idusuario_fk" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="usce_fechacreacion" Type="smalldatetime" />
+          <Property Name="usce_Usucreador" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Sarh_usuario">
+          <Key>
+            <PropertyRef Name="id_usuario_pk" />
+          </Key>
+          <Property Name="id_usuario_pk" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_tipodocumento_fk" Type="smallint" />
+          <Property Name="us_numerodocumento" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="us_nombre1" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="us_nombre2" Type="varchar" MaxLength="64" />
+          <Property Name="us_apellido1" Type="varchar" MaxLength="128" Nullable="false" />
+          <Property Name="us_apellido2" Type="varchar" MaxLength="128" />
+          <Property Name="us_login_base" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="us_telefonoppal" Type="varchar" MaxLength="15" />
+          <Property Name="us_telefonosecundario" Type="varchar" MaxLength="15" />
+          <Property Name="us_celular" Type="varchar" MaxLength="15" />
+          <Property Name="us_email" Type="varchar" MaxLength="60" />
+          <Property Name="us_direccion" Type="varchar" MaxLength="128" />
+          <Property Name="us_barrio" Type="varchar" MaxLength="50" />
+          <Property Name="us_fnacimiento" Type="datetime" />
+          <Property Name="us_lugarnacimiento" Type="varchar" MaxLength="150" />
+          <Property Name="us_numhijos" Type="int" />
+          <Property Name="id_estadocivil_fk" Type="smallint" />
+          <Property Name="us_idrh_fk" Type="smallint" />
+          <Property Name="id_eps_fk" Type="int" />
+          <Property Name="id_afp_fk" Type="int" />
+          <Property Name="us_tallacamisa" Type="varchar" MaxLength="10" />
+          <Property Name="us_tallapantalon" Type="varchar" MaxLength="10" />
+          <Property Name="us_tallachaqueta" Type="varchar" MaxLength="10" />
+          <Property Name="us_tallacalzado" Type="varchar" MaxLength="10" />
+          <Property Name="id_estado_fk" Type="smallint" Nullable="false" />
+          <Property Name="id_sede_fk" Type="smallint" />
+          <Property Name="id_perfil_fk" Type="smallint" />
+          <Property Name="id_cargo_fk" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="id_empleador_fk" Type="smallint" />
+          <Property Name="id_tipocontrato_fk" Type="smallint" />
+          <Property Name="id_tipojornada_fk" Type="smallint" />
+          <Property Name="us_fechainicio" Type="smalldatetime" />
+          <Property Name="us_fechaterminacion" Type="smalldatetime" />
+          <Property Name="fcreacion" Type="smalldatetime" />
+          <Property Name="us_usucre_fk" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="id_coord" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="us_empresa" Type="varchar" MaxLength="128" />
+          <Property Name="us_costos" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="us_idsexo_fk" Type="varchar" MaxLength="1" />
+          <Property Name="us_usuario" Type="varchar" MaxLength="10" />
+          <Property Name="us_pwd" Type="varchar" MaxLength="128" />
+          <Property Name="us_PorcentajeVariable" Type="varchar" MaxLength="380" />
+          <Property Name="us_Marca" Type="char" MaxLength="10" />
+          <Property Name="us_IdVariable_fk" Type="int" />
+          <Property Name="us_IdJefe" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="us_IdBandera_fk" Type="int" />
+          <Property Name="us_login_Sec" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="id_clasecontrato_fk" Type="int" />
+          <Property Name="id_DireccionFisica_pk" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="us_correo_personal" Type="varchar" MaxLength="80" />
+          <Property Name="us_licencia_conduccion" Type="bit" />
+          <Property Name="us_vehiculo_moto" Type="bit" />
+          <Property Name="us_vehiculo_automovil" Type="bit" />
+          <Property Name="us_extension" Type="varchar" MaxLength="70" />
+          <Property Name="us_Disponibilidad_viajar" Type="bit" />
+          <Property Name="us_Disponibilidad_traslado" Type="bit" />
+          <Property Name="us_Madre_Cabeza_Hogar" Type="bit" />
+          <Property Name="us_afrodescendiente" Type="bit" />
+          <Property Name="us_enfermedad_profesional" Type="bit" />
+          <Property Name="us_desplazamiento" Type="bit" />
+          <Property Name="us_discapacitado" Type="bit" />
+          <Property Name="us_reintegracion" Type="bit" />
+          <Property Name="us_aprendiz_sena" Type="bit" />
+          <Property Name="us_lugarexpedicion" Type="varchar" MaxLength="250" />
+          <Property Name="us_pais_nacimiento" Type="int" />
+          <Property Name="us_nacionalidad" Type="int" />
+          <Property Name="us_libretaMilitarNo" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="us_categoriaSisben" Type="int" />
+          <Property Name="us_categorialicencia" Type="int" />
+          <Property Name="us_ciudad_direccion" Type="int" />
+          <Property Name="us_conocimiento_sist" Type="varchar" MaxLength="50" />
+          <Property Name="us_direccion_partes" Type="varchar" MaxLength="128" />
+          <Property Name="us_estadocargue" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Sarh_CentroCostoxUsurio_Sarh_usuario">
+          <End Role="Sarh_usuario" Type="Self.Sarh_usuario" Multiplicity="1" />
+          <End Role="Sarh_CentroCostoxUsurio" Type="Self.Sarh_CentroCostoxUsurio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sarh_usuario">
+              <PropertyRef Name="id_usuario_pk" />
+            </Principal>
+            <Dependent Role="Sarh_CentroCostoxUsurio">
+              <PropertyRef Name="usce_Idusuario_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sarh_familiarxusuario_Sarh_usuario">
+          <End Role="Sarh_usuario" Type="Self.Sarh_usuario" Multiplicity="0..1" />
+          <End Role="Sarh_familiarxusuario" Type="Self.Sarh_familiarxusuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sarh_usuario">
+              <PropertyRef Name="id_usuario_pk" />
+            </Principal>
+            <Dependent Role="Sarh_familiarxusuario">
+              <PropertyRef Name="fam_idUsuario_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bdcmp_ccam_sisadmModelStoreContainer">
+          <EntitySet Name="Sarh_CentroCostoxUsurio" EntityType="Self.Sarh_CentroCostoxUsurio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sarh_familiarxusuario" EntityType="Self.Sarh_familiarxusuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sarh_Log_Usuario" EntityType="Self.sarh_Log_Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sarh_usuario" EntityType="Self.Sarh_usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Sarh_CentroCostoxUsurio_Sarh_usuario" Association="Self.FK_Sarh_CentroCostoxUsurio_Sarh_usuario">
+            <End Role="Sarh_usuario" EntitySet="Sarh_usuario" />
+            <End Role="Sarh_CentroCostoxUsurio" EntitySet="Sarh_CentroCostoxUsurio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sarh_familiarxusuario_Sarh_usuario" Association="Self.FK_Sarh_familiarxusuario_Sarh_usuario">
+            <End Role="Sarh_usuario" EntitySet="Sarh_usuario" />
+            <End Role="Sarh_familiarxusuario" EntitySet="Sarh_familiarxusuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bdcmp_ccam_sisadmModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Sarh_CentroCostoxUsurio">
+          <Key>
+            <PropertyRef Name="usce_Idusucent" />
+          </Key>
+          <Property Name="usce_Idusucent" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usce_Idusuario_fk" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="usce_Idcentro_fk" Type="Int32" Nullable="false" />
+          <Property Name="usce_Idoperacion" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="usce_fechacreacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="usce_Usucreador" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="rowguid" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Sarh_usuario" Relationship="Self.FK_Sarh_CentroCostoxUsurio_Sarh_usuario" FromRole="Sarh_CentroCostoxUsurio" ToRole="Sarh_usuario" />
+        </EntityType>
+        <EntityType Name="Sarh_familiarxusuario">
+          <Key>
+            <PropertyRef Name="id_familiar_pk" />
+          </Key>
+          <Property Name="id_familiar_pk" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fam_idUsuario_fk" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="fam_NombreCompleto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fam_DocumentoFamiliar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fam_Parentesco_Familiar" Type="Int32" />
+          <Property Name="fam_fcreacion" Type="DateTime" Precision="0" />
+          <Property Name="rowguid" Type="Guid" Nullable="false" />
+          <Property Name="fam_idusucreador_fk" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="fam_ocupacion_fk" Type="Int32" />
+          <Property Name="fam_empresa" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="fam_telefono" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="fam_depende" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Sarh_usuario" Relationship="Self.FK_Sarh_familiarxusuario_Sarh_usuario" FromRole="Sarh_familiarxusuario" ToRole="Sarh_usuario" />
+        </EntityType>
+        <EntityType Name="sarh_Log_Usuario">
+          <Key>
+            <PropertyRef Name="id_Log_usuarioFamiliarxcentrocosto" />
+          </Key>
+          <Property Name="id_Log_usuarioFamiliarxcentrocosto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fam_NombreCompleto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usce_Idcentro_fk" Type="Int32" />
+          <Property Name="usce_Idusuario_fk" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="usce_fechacreacion" Type="DateTime" Precision="0" />
+          <Property Name="usce_Usucreador" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Sarh_usuario">
+          <Key>
+            <PropertyRef Name="id_usuario_pk" />
+          </Key>
+          <Property Name="id_usuario_pk" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_tipodocumento_fk" Type="Int16" />
+          <Property Name="us_numerodocumento" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="us_nombre1" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="us_nombre2" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="us_apellido1" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="us_apellido2" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="us_login_base" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="us_telefonoppal" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="us_telefonosecundario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="us_celular" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="us_email" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="us_direccion" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="us_barrio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="us_fnacimiento" Type="DateTime" Precision="3" />
+          <Property Name="us_lugarnacimiento" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="us_numhijos" Type="Int32" />
+          <Property Name="id_estadocivil_fk" Type="Int16" />
+          <Property Name="us_idrh_fk" Type="Int16" />
+          <Property Name="id_eps_fk" Type="Int32" />
+          <Property Name="id_afp_fk" Type="Int32" />
+          <Property Name="us_tallacamisa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="us_tallapantalon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="us_tallachaqueta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="us_tallacalzado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="id_estado_fk" Type="Int16" Nullable="false" />
+          <Property Name="id_sede_fk" Type="Int16" />
+          <Property Name="id_perfil_fk" Type="Int16" />
+          <Property Name="id_cargo_fk" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="id_empleador_fk" Type="Int16" />
+          <Property Name="id_tipocontrato_fk" Type="Int16" />
+          <Property Name="id_tipojornada_fk" Type="Int16" />
+          <Property Name="us_fechainicio" Type="DateTime" Precision="0" />
+          <Property Name="us_fechaterminacion" Type="DateTime" Precision="0" />
+          <Property Name="fcreacion" Type="DateTime" Precision="0" />
+          <Property Name="us_usucre_fk" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="id_coord" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="rowguid" Type="Guid" Nullable="false" />
+          <Property Name="us_empresa" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="us_costos" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="us_idsexo_fk" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="us_usuario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="us_pwd" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="us_PorcentajeVariable" Type="String" MaxLength="380" FixedLength="false" Unicode="false" />
+          <Property Name="us_Marca" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="us_IdVariable_fk" Type="Int32" />
+          <Property Name="us_IdJefe" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="us_IdBandera_fk" Type="Int32" />
+          <Property Name="us_login_Sec" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="id_clasecontrato_fk" Type="Int32" />
+          <Property Name="id_DireccionFisica_pk" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="us_correo_personal" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="us_licencia_conduccion" Type="Boolean" />
+          <Property Name="us_vehiculo_moto" Type="Boolean" />
+          <Property Name="us_vehiculo_automovil" Type="Boolean" />
+          <Property Name="us_extension" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="us_Disponibilidad_viajar" Type="Boolean" />
+          <Property Name="us_Disponibilidad_traslado" Type="Boolean" />
+          <Property Name="us_Madre_Cabeza_Hogar" Type="Boolean" />
+          <Property Name="us_afrodescendiente" Type="Boolean" />
+          <Property Name="us_enfermedad_profesional" Type="Boolean" />
+          <Property Name="us_desplazamiento" Type="Boolean" />
+          <Property Name="us_discapacitado" Type="Boolean" />
+          <Property Name="us_reintegracion" Type="Boolean" />
+          <Property Name="us_aprendiz_sena" Type="Boolean" />
+          <Property Name="us_lugarexpedicion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="us_pais_nacimiento" Type="Int32" />
+          <Property Name="us_nacionalidad" Type="Int32" />
+          <Property Name="us_libretaMilitarNo" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="us_categoriaSisben" Type="Int32" />
+          <Property Name="us_categorialicencia" Type="Int32" />
+          <Property Name="us_ciudad_direccion" Type="Int32" />
+          <Property Name="us_conocimiento_sist" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="us_direccion_partes" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="us_estadocargue" Type="Boolean" />
+          <NavigationProperty Name="Sarh_CentroCostoxUsurio" Relationship="Self.FK_Sarh_CentroCostoxUsurio_Sarh_usuario" FromRole="Sarh_usuario" ToRole="Sarh_CentroCostoxUsurio" />
+          <NavigationProperty Name="Sarh_familiarxusuario" Relationship="Self.FK_Sarh_familiarxusuario_Sarh_usuario" FromRole="Sarh_usuario" ToRole="Sarh_familiarxusuario" />
+        </EntityType>
+        <Association Name="FK_Sarh_CentroCostoxUsurio_Sarh_usuario">
+          <End Role="Sarh_usuario" Type="Self.Sarh_usuario" Multiplicity="1" />
+          <End Role="Sarh_CentroCostoxUsurio" Type="Self.Sarh_CentroCostoxUsurio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sarh_usuario">
+              <PropertyRef Name="id_usuario_pk" />
+            </Principal>
+            <Dependent Role="Sarh_CentroCostoxUsurio">
+              <PropertyRef Name="usce_Idusuario_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sarh_familiarxusuario_Sarh_usuario">
+          <End Role="Sarh_usuario" Type="Self.Sarh_usuario" Multiplicity="0..1" />
+          <End Role="Sarh_familiarxusuario" Type="Self.Sarh_familiarxusuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sarh_usuario">
+              <PropertyRef Name="id_usuario_pk" />
+            </Principal>
+            <Dependent Role="Sarh_familiarxusuario">
+              <PropertyRef Name="fam_idUsuario_fk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bdcmp_ccam_sisadmEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Sarh_CentroCostoxUsurio" EntityType="Self.Sarh_CentroCostoxUsurio" />
+          <EntitySet Name="Sarh_familiarxusuario" EntityType="Self.Sarh_familiarxusuario" />
+          <EntitySet Name="sarh_Log_Usuario" EntityType="Self.sarh_Log_Usuario" />
+          <EntitySet Name="Sarh_usuario" EntityType="Self.Sarh_usuario" />
+          <AssociationSet Name="FK_Sarh_CentroCostoxUsurio_Sarh_usuario" Association="Self.FK_Sarh_CentroCostoxUsurio_Sarh_usuario">
+            <End Role="Sarh_usuario" EntitySet="Sarh_usuario" />
+            <End Role="Sarh_CentroCostoxUsurio" EntitySet="Sarh_CentroCostoxUsurio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sarh_familiarxusuario_Sarh_usuario" Association="Self.FK_Sarh_familiarxusuario_Sarh_usuario">
+            <End Role="Sarh_usuario" EntitySet="Sarh_usuario" />
+            <End Role="Sarh_familiarxusuario" EntitySet="Sarh_familiarxusuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bdcmp_ccam_sisadmModelStoreContainer" CdmEntityContainer="bdcmp_ccam_sisadmEntities">
+          <EntitySetMapping Name="Sarh_CentroCostoxUsurio">
+            <EntityTypeMapping TypeName="bdcmp_ccam_sisadmModel.Sarh_CentroCostoxUsurio">
+              <MappingFragment StoreEntitySet="Sarh_CentroCostoxUsurio">
+                <ScalarProperty Name="usce_Idusucent" ColumnName="usce_Idusucent" />
+                <ScalarProperty Name="usce_Idusuario_fk" ColumnName="usce_Idusuario_fk" />
+                <ScalarProperty Name="usce_Idcentro_fk" ColumnName="usce_Idcentro_fk" />
+                <ScalarProperty Name="usce_Idoperacion" ColumnName="usce_Idoperacion" />
+                <ScalarProperty Name="usce_fechacreacion" ColumnName="usce_fechacreacion" />
+                <ScalarProperty Name="usce_Usucreador" ColumnName="usce_Usucreador" />
+                <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sarh_familiarxusuario">
+            <EntityTypeMapping TypeName="bdcmp_ccam_sisadmModel.Sarh_familiarxusuario">
+              <MappingFragment StoreEntitySet="Sarh_familiarxusuario">
+                <ScalarProperty Name="id_familiar_pk" ColumnName="id_familiar_pk" />
+                <ScalarProperty Name="fam_idUsuario_fk" ColumnName="fam_idUsuario_fk" />
+                <ScalarProperty Name="fam_NombreCompleto" ColumnName="fam_NombreCompleto" />
+                <ScalarProperty Name="fam_DocumentoFamiliar" ColumnName="fam_DocumentoFamiliar" />
+                <ScalarProperty Name="fam_Parentesco_Familiar" ColumnName="fam_Parentesco_Familiar" />
+                <ScalarProperty Name="fam_fcreacion" ColumnName="fam_fcreacion" />
+                <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+                <ScalarProperty Name="fam_idusucreador_fk" ColumnName="fam_idusucreador_fk" />
+                <ScalarProperty Name="fam_ocupacion_fk" ColumnName="fam_ocupacion_fk" />
+                <ScalarProperty Name="fam_empresa" ColumnName="fam_empresa" />
+                <ScalarProperty Name="fam_telefono" ColumnName="fam_telefono" />
+                <ScalarProperty Name="fam_depende" ColumnName="fam_depende" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sarh_Log_Usuario">
+            <EntityTypeMapping TypeName="bdcmp_ccam_sisadmModel.sarh_Log_Usuario">
+              <MappingFragment StoreEntitySet="sarh_Log_Usuario">
+                <ScalarProperty Name="id_Log_usuarioFamiliarxcentrocosto" ColumnName="id_Log_usuarioFamiliarxcentrocosto" />
+                <ScalarProperty Name="fam_NombreCompleto" ColumnName="fam_NombreCompleto" />
+                <ScalarProperty Name="usce_Idcentro_fk" ColumnName="usce_Idcentro_fk" />
+                <ScalarProperty Name="usce_Idusuario_fk" ColumnName="usce_Idusuario_fk" />
+                <ScalarProperty Name="usce_fechacreacion" ColumnName="usce_fechacreacion" />
+                <ScalarProperty Name="usce_Usucreador" ColumnName="usce_Usucreador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sarh_usuario">
+            <EntityTypeMapping TypeName="bdcmp_ccam_sisadmModel.Sarh_usuario">
+              <MappingFragment StoreEntitySet="Sarh_usuario">
+                <ScalarProperty Name="id_usuario_pk" ColumnName="id_usuario_pk" />
+                <ScalarProperty Name="id_tipodocumento_fk" ColumnName="id_tipodocumento_fk" />
+                <ScalarProperty Name="us_numerodocumento" ColumnName="us_numerodocumento" />
+                <ScalarProperty Name="us_nombre1" ColumnName="us_nombre1" />
+                <ScalarProperty Name="us_nombre2" ColumnName="us_nombre2" />
+                <ScalarProperty Name="us_apellido1" ColumnName="us_apellido1" />
+                <ScalarProperty Name="us_apellido2" ColumnName="us_apellido2" />
+                <ScalarProperty Name="us_login_base" ColumnName="us_login_base" />
+                <ScalarProperty Name="us_telefonoppal" ColumnName="us_telefonoppal" />
+                <ScalarProperty Name="us_telefonosecundario" ColumnName="us_telefonosecundario" />
+                <ScalarProperty Name="us_celular" ColumnName="us_celular" />
+                <ScalarProperty Name="us_email" ColumnName="us_email" />
+                <ScalarProperty Name="us_direccion" ColumnName="us_direccion" />
+                <ScalarProperty Name="us_barrio" ColumnName="us_barrio" />
+                <ScalarProperty Name="us_fnacimiento" ColumnName="us_fnacimiento" />
+                <ScalarProperty Name="us_lugarnacimiento" ColumnName="us_lugarnacimiento" />
+                <ScalarProperty Name="us_numhijos" ColumnName="us_numhijos" />
+                <ScalarProperty Name="id_estadocivil_fk" ColumnName="id_estadocivil_fk" />
+                <ScalarProperty Name="us_idrh_fk" ColumnName="us_idrh_fk" />
+                <ScalarProperty Name="id_eps_fk" ColumnName="id_eps_fk" />
+                <ScalarProperty Name="id_afp_fk" ColumnName="id_afp_fk" />
+                <ScalarProperty Name="us_tallacamisa" ColumnName="us_tallacamisa" />
+                <ScalarProperty Name="us_tallapantalon" ColumnName="us_tallapantalon" />
+                <ScalarProperty Name="us_tallachaqueta" ColumnName="us_tallachaqueta" />
+                <ScalarProperty Name="us_tallacalzado" ColumnName="us_tallacalzado" />
+                <ScalarProperty Name="id_estado_fk" ColumnName="id_estado_fk" />
+                <ScalarProperty Name="id_sede_fk" ColumnName="id_sede_fk" />
+                <ScalarProperty Name="id_perfil_fk" ColumnName="id_perfil_fk" />
+                <ScalarProperty Name="id_cargo_fk" ColumnName="id_cargo_fk" />
+                <ScalarProperty Name="id_empleador_fk" ColumnName="id_empleador_fk" />
+                <ScalarProperty Name="id_tipocontrato_fk" ColumnName="id_tipocontrato_fk" />
+                <ScalarProperty Name="id_tipojornada_fk" ColumnName="id_tipojornada_fk" />
+                <ScalarProperty Name="us_fechainicio" ColumnName="us_fechainicio" />
+                <ScalarProperty Name="us_fechaterminacion" ColumnName="us_fechaterminacion" />
+                <ScalarProperty Name="fcreacion" ColumnName="fcreacion" />
+                <ScalarProperty Name="us_usucre_fk" ColumnName="us_usucre_fk" />
+                <ScalarProperty Name="id_coord" ColumnName="id_coord" />
+                <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+                <ScalarProperty Name="us_empresa" ColumnName="us_empresa" />
+                <ScalarProperty Name="us_costos" ColumnName="us_costos" />
+                <ScalarProperty Name="us_idsexo_fk" ColumnName="us_idsexo_fk" />
+                <ScalarProperty Name="us_usuario" ColumnName="us_usuario" />
+                <ScalarProperty Name="us_pwd" ColumnName="us_pwd" />
+                <ScalarProperty Name="us_PorcentajeVariable" ColumnName="us_PorcentajeVariable" />
+                <ScalarProperty Name="us_Marca" ColumnName="us_Marca" />
+                <ScalarProperty Name="us_IdVariable_fk" ColumnName="us_IdVariable_fk" />
+                <ScalarProperty Name="us_IdJefe" ColumnName="us_IdJefe" />
+                <ScalarProperty Name="us_IdBandera_fk" ColumnName="us_IdBandera_fk" />
+                <ScalarProperty Name="us_login_Sec" ColumnName="us_login_Sec" />
+                <ScalarProperty Name="id_clasecontrato_fk" ColumnName="id_clasecontrato_fk" />
+                <ScalarProperty Name="id_DireccionFisica_pk" ColumnName="id_DireccionFisica_pk" />
+                <ScalarProperty Name="us_correo_personal" ColumnName="us_correo_personal" />
+                <ScalarProperty Name="us_licencia_conduccion" ColumnName="us_licencia_conduccion" />
+                <ScalarProperty Name="us_vehiculo_moto" ColumnName="us_vehiculo_moto" />
+                <ScalarProperty Name="us_vehiculo_automovil" ColumnName="us_vehiculo_automovil" />
+                <ScalarProperty Name="us_extension" ColumnName="us_extension" />
+                <ScalarProperty Name="us_Disponibilidad_viajar" ColumnName="us_Disponibilidad_viajar" />
+                <ScalarProperty Name="us_Disponibilidad_traslado" ColumnName="us_Disponibilidad_traslado" />
+                <ScalarProperty Name="us_Madre_Cabeza_Hogar" ColumnName="us_Madre_Cabeza_Hogar" />
+                <ScalarProperty Name="us_afrodescendiente" ColumnName="us_afrodescendiente" />
+                <ScalarProperty Name="us_enfermedad_profesional" ColumnName="us_enfermedad_profesional" />
+                <ScalarProperty Name="us_desplazamiento" ColumnName="us_desplazamiento" />
+                <ScalarProperty Name="us_discapacitado" ColumnName="us_discapacitado" />
+                <ScalarProperty Name="us_reintegracion" ColumnName="us_reintegracion" />
+                <ScalarProperty Name="us_aprendiz_sena" ColumnName="us_aprendiz_sena" />
+                <ScalarProperty Name="us_lugarexpedicion" ColumnName="us_lugarexpedicion" />
+                <ScalarProperty Name="us_pais_nacimiento" ColumnName="us_pais_nacimiento" />
+                <ScalarProperty Name="us_nacionalidad" ColumnName="us_nacionalidad" />
+                <ScalarProperty Name="us_libretaMilitarNo" ColumnName="us_libretaMilitarNo" />
+                <ScalarProperty Name="us_categoriaSisben" ColumnName="us_categoriaSisben" />
+                <ScalarProperty Name="us_categorialicencia" ColumnName="us_categorialicencia" />
+                <ScalarProperty Name="us_ciudad_direccion" ColumnName="us_ciudad_direccion" />
+                <ScalarProperty Name="us_conocimiento_sist" ColumnName="us_conocimiento_sist" />
+                <ScalarProperty Name="us_direccion_partes" ColumnName="us_direccion_partes" />
+                <ScalarProperty Name="us_estadocargue" ColumnName="us_estadocargue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
